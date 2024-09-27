@@ -3,12 +3,9 @@
 import { connect } from 'cloudflare:sockets';
 
 const listProxy = [
-    { path: '/id1', proxy: '194.58.56.169' },
-    { path: '/id2', proxy: '202.10.42.30' },
-    { path: '/id3', proxy: '194.58.56.111' },
-    { path: '/id4', proxy: '194.58.56.49' },
-    { path: '/id5', proxy: '202.10.42.30' },
-    { path: '/id6', proxy: '35.219.50.99' },
+    { path: '/id1', proxy: '202.10.42.30' },
+    { path: '/id2', proxy: '35.219.50.99' },
+    { path: '/id3', proxy: '35.219.50.99' },
     { path: '/sg1', proxy: '104.248.145.216' },
     { path: '/sg2', proxy: '51.91.40.26' },
     //tambahin sendiri
@@ -50,8 +47,8 @@ async function getVLESSConfig(path, hostName, proxyIP) {
         const city = data.city;
         const country_code = data.country_code;
         const pathFixed = encodeURIComponent(path);
-        const vlessTls = `vless://bexnxx\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=${pathFixed}#${isp} (${country_code})`;
-        const vlessNtls = `vless://bexnxx\u0040${hostName}:80?path=${pathFixed}&security=none&encryption=none&host=${hostName}&fp=randomized&type=ws&sni=${hostName}#${isp} (${country_code})`;
+        const vlessTls = `vless://zor\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=${pathFixed}#${isp} (${country_code})`;
+        const vlessNtls = `vless://zor\u0040${hostName}:80?path=${pathFixed}&security=none&encryption=none&host=${hostName}&fp=randomized&type=ws&sni=${hostName}#${isp} (${country_code})`;
         const vlessTlsFixed = vlessTls.replace(/ /g, '+');
         const vlessNtlsFixed = vlessNtls.replace(/ /g, '+');
         return `
