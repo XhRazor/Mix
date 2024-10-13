@@ -5,7 +5,7 @@ import { connect } from 'cloudflare:sockets';
 const listProxy = [
     { path: '/id1', proxy: '202.10.42.30' },
     { path: '/id2', proxy: '35.219.50.99' },
-    { path: '/id3', proxy: '35.219.50.99' },
+    { path: '/id3', proxy: '101.50.0.114' },
     { path: '/sg1', proxy: '104.248.145.216' },
     { path: '/sg2', proxy: '51.91.40.26' },
     //tambahin sendiri
